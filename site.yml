@@ -1,0 +1,12 @@
+- hosts: all
+  become: true
+  pre_tasks:
+  - name: apt update
+    apt:
+      update_cache: true
+  roles:
+    - role: ansible
+    - role: git
+    - role: vscode
+    - role: golang
+

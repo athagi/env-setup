@@ -1,0 +1,12 @@
+- name: install packages
+  apt: 
+    name: software-properties-common
+    update_cache: true
+- name: update ansible ppa
+  apt_repository:
+    repo: ppa:ansible/ansible
+- name: install ansible
+  apt:
+    name: ansible
+    update_cache: true
+  

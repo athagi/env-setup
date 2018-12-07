@@ -1,0 +1,6 @@
+[all]
+{{ TARGET_IP }}
+
+[all:vars]
+ansible_ssh_user={{ SSH_USER }}
+ansible_become_pass={{ SSH_PASS }}
