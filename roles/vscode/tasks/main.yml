@@ -2,7 +2,7 @@
   get_url:
     url: https://go.microsoft.com/fwlink/?LinkID=760868
     dest: /home/ubuntu/Downloads
-    mode: 664
+    mode: 0664
   register: vscode
 - name: install vscode
   apt:
