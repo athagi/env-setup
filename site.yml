@@ -7,6 +7,9 @@
   roles:
     - role: ansible
     - role: git
+    - role: jq
+    - role: docker
     - role: vscode
     - role: golang
-
+    - role: virtualbox
+    - role: vagrant
