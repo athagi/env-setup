@@ -1,0 +1,27 @@
+- name: remove add-apt-repository
+  apt_repository:
+    repo: ppa:chris-lea/node.js
+    state: absent
+- name: remove the old PPA if it exists
+  file:
+    state: absent
+    path: '{{ item }}'
+  with_items:
+    - /etc/apt/sources.list.d/chris-lea-node_js-*.list
+    - /etc/apt/sources.list.d/chris-lea-node_js-*.list.save
+- name: add the NodeSource package signing key
+  apt_key:
+    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state: present
+- name: update package repository
+  apt_repository:
+    repo: '{{ item }}'
+    state: present
+  with_items:
+    - deb https://deb.nodesource.com/{{ node.version}} {{ ansible_distribution_release }} main
+    - deb-src https://deb.nodesource.com/{{ node.version}} {{ ansible_distribution_release }} main
+- name: install node.js
+  apt:
+    name: nodejs
+    state: latest
+    
