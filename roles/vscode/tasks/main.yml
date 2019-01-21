@@ -1,7 +1,7 @@
 - name: download .deb package
   get_url:
     url: https://go.microsoft.com/fwlink/?LinkID=760868
-    dest: /home/ubuntu/Downloads
+    dest: /home/{{ ansible_ssh_user }}/Downloads
     mode: 664
   register: vscode
 - name: install vscode
