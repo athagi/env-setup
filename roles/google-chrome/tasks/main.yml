@@ -1,0 +1,12 @@
+- name: Add chrome GPG key
+  apt_key:
+    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+    state: present
+- name: Setup stable repository
+  apt_repository:
+    repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+    state: present
+- name: Install google-chrome
+  apt:
+    name: google-chrome-stable
+    state: present
