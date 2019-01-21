@@ -1,0 +1,9 @@
+- name: download vagrant deb package
+  get_url:
+    url: https://releases.hashicorp.com/vagrant/{{ vagrant.version }}/vagrant_{{ vagrant.version }}_{{ ansible_architecture }}.deb
+    dest: /tmp/vagrant_{{ vagrant.version }}_{{ ansible_architecture }}.deb
+    checksum: "{{ vagrant.checksum }}"
+- name: install vagrant
+  apt:
+    deb: /tmp/vagrant_{{ vagrant.version }}_{{ ansible_architecture }}.deb
+
