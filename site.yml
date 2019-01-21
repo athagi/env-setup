@@ -14,3 +14,5 @@
     - role: virtualbox
     - role: vagrant
     - role: nodejs
+    - role: vim
+
