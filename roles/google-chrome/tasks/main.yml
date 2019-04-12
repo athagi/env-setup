@@ -9,4 +9,8 @@
 - name: Install google-chrome
   apt:
     name: google-chrome-stable
-    state: present
+    state: latest
+    update_cache: yes
+    force: yes
+
+
