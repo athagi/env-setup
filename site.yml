@@ -16,3 +16,4 @@
     - role: nodejs
     - role: vim
     - role: google-chrome
+    - role: python
